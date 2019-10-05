@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fx", "Fx\Fx.csproj", "{1149F33F-4F17-4197-9A89-18BAA59350A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fx.Tests", "Fx.Tests\Fx.Tests.csproj", "{6EE18140-BD83-47B6-AA12-0DD3B8CAEDD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1149F33F-4F17-4197-9A89-18BAA59350A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1149F33F-4F17-4197-9A89-18BAA59350A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1149F33F-4F17-4197-9A89-18BAA59350A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1149F33F-4F17-4197-9A89-18BAA59350A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EE18140-BD83-47B6-AA12-0DD3B8CAEDD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE18140-BD83-47B6-AA12-0DD3B8CAEDD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE18140-BD83-47B6-AA12-0DD3B8CAEDD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE18140-BD83-47B6-AA12-0DD3B8CAEDD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- master
+- .*
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -16,4 +16,5 @@ variables:
 
 steps:
 - script: dotnet restore
-- script: dotnet test <test-project> --logger trx
+- script: dotnet build
+- script: dotnet test --logger trx

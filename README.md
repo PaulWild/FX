@@ -15,3 +15,5 @@ var mNone = Maybe<int>.None(); //None of Int
 var eitherIntOrString = Either<int, string>.Left(12); //Left of 12
 var eitherIntOrString = Either<int,string>.Right("string"); //Right of "hello"
 ```
+
+[![Build Status](https://dev.azure.com/paul-wild/Utilities/_apis/build/status/PaulWild.FX?branchName=master)](https://dev.azure.com/paul-wild/Utilities/_build/latest?definitionId=1&branchName=master)

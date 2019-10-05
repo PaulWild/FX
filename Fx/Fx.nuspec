@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>Fx</title>
+    <authors>Paul Wild</authors>
+    <owners>Paul Wild</owners>
+    <projectUrl>https://github.com/PaulWild/FX</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Functional Extensions for C#</description>
+    <releaseNotes>Either and Maybe Types</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+  </metadata>
+</package>

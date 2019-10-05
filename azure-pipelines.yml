@@ -39,7 +39,7 @@ steps:
     command: 'pack'
     arguments: '--configuration $(buildConfiguration)'
     nobuild: true
-    versioningScheme: 'byPreReleaseNumber'
+    versioningScheme: 'byPrereleaseNumber'
     majorVersion: '$(Major)'
     minorVersion: '$(Minor)'
     patchVersion: '$(Patch)'

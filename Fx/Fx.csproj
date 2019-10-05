@@ -2,7 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard1.0</TargetFramework>
-        <NuspecFile>Fx.nuspec</NuspecFile>
+        <authors>Paul Wild</authors>
+        <owners>Paul Wild</owners>
+        <projectUrl>https://github.com/PaulWild/FX</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Functional Extensions for C#</description>
+        <releaseNotes>Either and Maybe Types</releaseNotes>
+        <copyright>Copyright 2019</copyright>
     </PropertyGroup>
 
 </Project>

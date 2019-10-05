@@ -37,7 +37,7 @@ steps:
   displayName: "dotnet pack"
   inputs:
     command: 'pack'
-    packagesToPack: 'Fx/Fx.nuspec'
+    packagesToPack: 'Fx/Fx.csproj'
     arguments: '--configuration $(buildConfiguration)'
     nobuild: true
     versioningScheme: 'byPrereleaseNumber'

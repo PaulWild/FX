@@ -37,7 +37,7 @@ steps:
   displayName: "dotnet pack"
   inputs:
     command: 'pack'
-    packagesToPack: '**\\*.nuspec'
+    packagesToPack: '**/*.nuspec'
     arguments: '--configuration $(buildConfiguration)'
     nobuild: true
     versioningScheme: 'byPrereleaseNumber'

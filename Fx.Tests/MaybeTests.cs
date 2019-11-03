@@ -1,4 +1,5 @@
 using System;
+using System.Xml.XPath;
 using Xunit;
 
 namespace Fx.Tests
@@ -67,14 +68,20 @@ namespace Fx.Tests
         public void MaybeInt_CanBeUsedInLinq()
         {
             var sut = Maybe<int>.Some(12);
-            var transform = 
-                from x in sut
-                select x * 2;
+            var sut2 = Maybe<int>.Some(2);
+            var sut3 = Maybe<string>.Some("sdfg");
             
-            var result = transform.Match(x => x, () => throw new Exception());
+            var transform =
+                from x in sut
+                from y in sut3
+                from z in sut2
+                let b = y.Length
+                select x * b * z;
+            
+            var result = transform.Match(x => x, () => -1);
 
             
-            Assert.Equal(24, result);
+            Assert.Equal(96, result);
         }
     }
 }

@@ -57,6 +57,13 @@ namespace Fx
                 : Either<L, TResult>.Left(LeftValue);
         }
         
+        public Either<L, TResult> SelectMany<TCollection, TResult>(Func<R, Either<L,TCollection>> collectionSelector, Func<R, TCollection, TResult> resultSelector)
+        {
+            return !IsRight
+                ? Either<L, TResult>.Left(LeftValue)
+                : collectionSelector(RightValue).Match(Either<L, TResult>.Left, x => Either<L, TResult>.Right(resultSelector(RightValue, x)));
+        }
+        
         private bool Equals(Either<L, R> other)
         {
             return IsRight == other.IsRight && EqualityComparer<L>.Default.Equals(LeftValue, other.LeftValue) && EqualityComparer<R>.Default.Equals(RightValue, other.RightValue);

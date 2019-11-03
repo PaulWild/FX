@@ -71,5 +71,22 @@ namespace Fx.Tests
             Assert.Equal(12, result);
         }
 
+        [Fact]
+        public void EitherIntString_CanBeUsedInLinq()
+        {
+            var sut = Either<int, string>.Right("12");
+            var sut2 = Either<int, string>.Right("34");
+
+            var transform =
+                from x in sut
+                from y in sut2
+                select x + y;
+            
+            var result = transform.Match(x => throw new Exception(), x => x);
+
+            Assert.Equal("1234", result);
+        }
+
     }
+    
 }

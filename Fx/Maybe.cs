@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace Fx
 {
+    /// <summary>
+    /// Maybe Monad of Type T
+    /// </summary>
+    /// <typeparam name="T">Type to enclose is a maybe</typeparam>
     public sealed class Maybe<T>
     {
         private bool HasItem { get; }
@@ -20,13 +24,26 @@ namespace Fx
             HasItem = true;
         }
 
+        /// <summary>
+        /// Create a Maybe of Type T, that represents the None.
+        /// </summary>
+        /// <returns>A None Maybe of Type T</returns>
         public static Maybe<T> None()
         {
             return new Maybe<T>();
         }
-        
+
+        /// <summary>
+        /// Create a Maybe Monad with a value
+        /// </summary>
+        /// <param name="value">Value to enclose</param>
+        /// <returns>Maybe of Type T with value</returns>
+        /// <exception cref="ArgumentNullException">thrown if null passed in as value</exception>
         public static Maybe<T> Some(T value)
         {
+            if (value == null)
+                throw new ArgumentNullException();
+                
             return new Maybe<T>(value);
         }
 
@@ -42,6 +59,13 @@ namespace Fx
             return !HasItem
                 ? Maybe<TResult>.None()
                 : f(Value);
+        }
+        
+        public Maybe<TResult> SelectMany<TCollection, TResult>(Func<T, Maybe<TCollection>> collectionSelector, Func<T, TCollection, TResult> resultSelector)
+        {
+            return !HasItem
+                ? Maybe<TResult>.None()
+                : collectionSelector(Value).Match(x => Maybe<TResult>.Some(resultSelector(Value, x)), Maybe<TResult>.None);
         }
 
         public TResult Match<TResult>(Func<T, TResult> ok, Func<TResult> nothing)
